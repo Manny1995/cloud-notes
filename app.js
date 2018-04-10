@@ -11,6 +11,9 @@ const path = require("path");
 
 const app = express();
 
+const cors = require('cors');
+app.use(cors());
+
 
 // engine
 app.engine('hbs', expressHandlebars({
@@ -23,7 +26,7 @@ app.set('views', path.join(__dirname,'/views'));
 app.set('view engine', 'hbs');
 
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 3001));
 const mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/CloudNotes';
 
 
