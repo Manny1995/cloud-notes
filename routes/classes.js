@@ -22,6 +22,13 @@ router.get('/', function(req, res, next) {
     });
 });
 
+// router.delete('/', function(req, res, next) {
 
+    
+//     CategoryManager.decrementCategory("Big Data", function(bla) {
+//         res.json(200,{});
+
+//     })
+// });
 
 module.exports = router;

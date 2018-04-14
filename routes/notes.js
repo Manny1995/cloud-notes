@@ -56,10 +56,18 @@ router.get('/', function(req, res, next) {
 router.post('/', upload.single('userFile'), function(req, res, next) {
 
     var appDir = path.dirname(require.main.filename);
+    console.log(appDir);
 
     console.log(req.file);
     console.log(req.body);
     console.log(path.join(appDir,req.file.path));
+    req.body.filepath = req.file.path;
+   // req.body.filepath = path.join(appDir,req.file.path);
+
+    // console.log("Printing body")
+    // console.log(req.body.filepath);
+    // console.log(req.body);
+
 
     NoteManager.addNote(req.body, function(err) {
         if (err) {
