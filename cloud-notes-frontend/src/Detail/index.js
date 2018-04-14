@@ -13,17 +13,7 @@ export default class DetailView extends Component {
       };
     }
   
-    
-    componentWillMount() {
-       
-    }
-    
-
-    
     componentWillReceiveProps(nextProps) {
-      // if(nextProps.match.params.id == this.props.match.params.id) {
-      //   return;
-      // }
 
       console.log("about to update detail view");
       console.log("Detail view Mounting");
@@ -50,10 +40,8 @@ export default class DetailView extends Component {
         console.log("still loading notes");
         return <h1>Loading...</h1>
       }
-      
 
-  
-      console.log("Component rendinering detail view");
+      console.log("Component rendering detail view");
       console.log(this.state.dataSource.length);
 
       var formattedDS = [];
@@ -73,30 +61,10 @@ export default class DetailView extends Component {
       console.log("Formatted ds");
       console.log(formattedDS);
 
-    
-
-
-      // var tmp = [];
-      // while (i < this.state.dataSource.length) {
-
-      //   if (tmp)
-      //   const tmp = [];
-      //   while (i < this.state.dataSource.length && i % 5 != 0) {
-      //     tmp.push(this.state.dataSource[i]);
-      //     i++;
-      //   }
-      //   tmp.push(this.state.dataSource[i]);
-      //   formattedDS.push(tmp);
-      //   i++;
-
-
-        
-      // }
-
-      var bla = formattedDS.map((rowArr) => {
+      var detailGrid = formattedDS.map((rowArr) => {
 
         var innerArr = rowArr.map((note) => {
-          return <NoteCard title={note.title} link={note.link} />
+          return <NoteCard title={note.title} link={note.filepath} />
         });
 
         return <div className="row">
@@ -110,6 +78,19 @@ export default class DetailView extends Component {
         return <NoteCard title={note.title} link={note.link} />
       });
   
-      return  (<div>{bla}</div>);
+      return  (<div>
+                <h3 className="page-title">{this.props.match.params.id}</h3>
+
+          {/* <nav className="top-nav">
+            <div className="container">
+              <div className="nav-wrapper">
+                <h3 className="page-title">{this.props.match.params.id}</h3>
+              </div>
+            </div>
+          </nav> */}
+          <br/>
+        
+          {detailGrid}
+          </div>);
     }
   }

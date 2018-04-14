@@ -11,9 +11,20 @@ const rf = require('../utils/response-formatter');
 const router = express.Router();
 
 const multer = require('multer');
+
+const storage = multer.diskStorage({
+
+    destination: function (req, file, cb) {
+        cb(null, 'public/')
+    },
+
+    filename : function(req, file, next) {
+        next(null, file.originalname);
+    }
+});
+
 const upload = multer({
-    dest: 'public/',
-    preservePath : true,
+    storage : storage,
 });
 
 var path = require('path');
@@ -55,19 +66,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', upload.single('userFile'), function(req, res, next) {
 
-    var appDir = path.dirname(require.main.filename);
-    console.log(appDir);
-
-    console.log(req.file);
-    console.log(req.body);
-    console.log(path.join(appDir,req.file.path));
-    req.body.filepath = req.file.path;
-   // req.body.filepath = path.join(appDir,req.file.path);
-
-    // console.log("Printing body")
-    // console.log(req.body.filepath);
-    // console.log(req.body);
-
+    req.body.filepath = encodeURI(req.file.path);
 
     NoteManager.addNote(req.body, function(err) {
         if (err) {
@@ -79,22 +78,6 @@ router.post('/', upload.single('userFile'), function(req, res, next) {
     });
 
 });
-
-// router.put('/:id', function(req, res, next) {
-    
-//     let updatedJSON = {
-
-//     };
-
-//     NoteManager.updateNote(req.params.id, updatedJSON, function(err) {
-//         if (err) {
-
-//         }
-//         else {
-
-//         }
-//     });
-// });
 
 router.delete('/:id', function(req, res, next) {
     NoteManager.deleteNote({_id : req.params.id}, function(err) {

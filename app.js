@@ -35,6 +35,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
+app.use('/public', express.static('public'))
 
 // set routes
 const notesRoute = require('./routes/notes');
@@ -42,6 +43,10 @@ const classRoute = require('./routes/classes');
 
 app.use('/api/notes', notesRoute);
 app.use('/api/classes', classRoute);
+
+
+var mongooseadmin = require('mongooseadmin');
+app.use('/admin',mongooseadmin());
 
 
 // Connect to mongodb
@@ -91,6 +96,9 @@ app.get('/', function(req, res) {
 });
 
 module.exports = app;
+
+
+const url = require('url');
 
 // Listen on port 3000
 app.listen(app.get('port'), function() {

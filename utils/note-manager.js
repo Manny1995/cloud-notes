@@ -5,13 +5,24 @@ const decrementCategory = require('./category-manager');
 const NoteModel = require('../models/Note');
 const CategoryManager = require('./category-manager');
 
+
+function formatNotes(notes) {
+    const newNotes = notes.map((note) => {
+        note.filepath = 'http://localhost:3001/' + note.filepath;
+        console.log(note.filepath);
+        return note;
+    });
+
+    return newNotes;
+}
+
 module.exports.getNotesForQuery = function(queryParams, next) {
     NoteModel.find(queryParams, function(err, notes) {
         if (err) {
             next(err, null);
         }
         else {
-            next(null, notes);
+            next(null, formatNotes(notes));
         }
     });
 }
@@ -22,7 +33,8 @@ module.exports.getNotesByCategory = function(categoryName, next) {
             next(err, null);
         }
         else {
-            next(null, notes);
+
+            next(null, formatNotes(notes));
         }
     });
 }
