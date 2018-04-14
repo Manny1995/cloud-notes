@@ -11,11 +11,29 @@ const rf = require('../utils/response-formatter');
 const router = express.Router();
 
 const multer = require('multer');
+const fs = require('fs');
+
+
+function setQueryTitle(queryTitle) {
+    let trimmedQuery = queryTitle.trim();
+    let dashedQuery = trimmedQuery.replace(/\s+/g, '-').toLowerCase();
+    return dashedQuery;    
+};
+
 
 const storage = multer.diskStorage({
 
     destination: function (req, file, cb) {
-        cb(null, 'public/')
+        console.log(req.body.category);
+        const queryTitle = setQueryTitle(req.body.category);
+
+        if (!fs.existsSync('public/' + queryTitle)){
+            fs.mkdirSync('public/' + queryTitle);
+        }
+
+
+
+        cb(null, 'public/' + queryTitle + '/');
     },
 
     filename : function(req, file, next) {

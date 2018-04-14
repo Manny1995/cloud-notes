@@ -2,6 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 
 const NoteManager = require('./utils/note-manager');
@@ -33,6 +34,7 @@ const mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/CloudNotes';
 //bodyParser has to be loaded before calling the routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser());
 
 
 app.use('/public', express.static('public'))
@@ -46,7 +48,13 @@ app.use('/api/classes', classRoute);
 
 
 var mongooseadmin = require('mongooseadmin');
-app.use('/admin',mongooseadmin());
+app.use('/admin',mongooseadmin({
+  authentication : (username, password, callback) => {
+    console.log(username)
+    console.log(password)
+    callback(username == 'manny' && password == 'supersecret');
+  },
+}));
 
 
 // Connect to mongodb
