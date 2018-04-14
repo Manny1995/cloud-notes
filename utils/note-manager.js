@@ -9,7 +9,6 @@ const CategoryManager = require('./category-manager');
 function formatNotes(notes) {
     const newNotes = notes.map((note) => {
         note.filepath = 'http://localhost:3001/' + note.filepath;
-        console.log(note.filepath);
         return note;
     });
 

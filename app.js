@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 
 const NoteManager = require('./utils/note-manager');
-const expressHandlebars = require('express-handlebars');
 
 const path = require("path");
 
@@ -14,18 +13,6 @@ const app = express();
 
 const cors = require('cors');
 app.use(cors());
-
-
-// engine
-app.engine('hbs', expressHandlebars({
-  defaultLayout: 'main.hbs', 
-  layoutsDir : __dirname + '/views/layouts',
-  extname: '.hbs',
-}));
-
-app.set('views', path.join(__dirname,'/views'));
-app.set('view engine', 'hbs');
-
 
 app.set('port', (process.env.PORT || 3001));
 const mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/CloudNotes';
@@ -36,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser());
 
-
+// for serving files
 app.use('/public', express.static('public'))
 
 // set routes
@@ -68,36 +55,6 @@ mongoose.connect(mongoURI, function(error) {
 });
 
 
-app.get('/:className', function(req, res, next){
-  console.log("Getting entries for a class name");
-
-  NoteManager.getNotesByCategory(req.params.className, function(err, notes) {
-
-    const formattedNotes = NoteManager.formatNotesForGrid(notes, 4);
-
-    const blob = [
-      [
-        'a', 'a', 'a', 'a'
-      ],
-      [
-        'a', 'a', 'a', 'a'
-      ],
-      [
-        'a', 'a', 'a', 'a'
-      ],
-
-      [
-        'a', 'a',
-      ],
-    ]
-    res.render('index', {
-        notes : blob,
-        categories : ['Big Data', 'EMGT', 'Research'],
-        currentCategory : req.params.className,
-    });
-  });
-});
-
 app.get('/', function(req, res) {
   console.log("Getting entries for default home");
   res.render('index');
@@ -105,8 +62,6 @@ app.get('/', function(req, res) {
 
 module.exports = app;
 
-
-const url = require('url');
 
 // Listen on port 3000
 app.listen(app.get('port'), function() {
