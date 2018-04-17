@@ -40,10 +40,15 @@ class App extends Component {
     console.log(this.state.classes)
 
 
+    let begin = null;
     let dsRoutes = this.state.classes.map(obj => {
         
       if (obj.queryTitle == null) {
         obj.queryTitle = "";
+      }
+
+      if (begin == null) {
+        begin = obj.queryTitle;
       }
   
       return <Route key={obj._id} path={'/'+obj.queryTitle} component={DetailView}/>
@@ -55,6 +60,7 @@ class App extends Component {
 
     console.log("Printing Classes");
     console.log(this.state.classes);
+
     return (
       <div className="App">
       
@@ -62,7 +68,7 @@ class App extends Component {
 
         <Switch>
           <Route path={'/:id'} component={DetailView}/>
-          <Redirect to="/architecture"/>
+          <Redirect to={'/' + begin}/>
 
         </Switch>
 

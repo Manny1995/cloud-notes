@@ -35,14 +35,9 @@ export default class DetailView extends Component {
   
     render() {
 
-      console.log("Rendering Detail View " + this.props.match.params.id);
       if (this.state.loading) {
-        console.log("still loading notes");
         return <h1>Loading...</h1>
       }
-
-      console.log("Component rendering detail view");
-      console.log(this.state.dataSource.length);
 
       var formattedDS = [];
 
@@ -58,8 +53,6 @@ export default class DetailView extends Component {
       }
 
       var formattedDS = splitArray(dsCopy, 4);
-      console.log("Formatted ds");
-      console.log(formattedDS);
 
       var detailGrid = formattedDS.map((rowArr) => {
 
@@ -79,7 +72,11 @@ export default class DetailView extends Component {
       });
   
       return  (<div>
-                <h3 className="page-title">{this.props.match.params.id}</h3>
+                <div className="row">
+                  {/* <div className="col s12 m3">
+                  </div>
+                  <h3 className="page-title left-align">{this.props.match.params.id}</h3> */}
+                </div>
 
           {/* <nav className="top-nav">
             <div className="container">

@@ -17,7 +17,7 @@ export default class ClassCard extends React.Component {
     render() {
       return (
         // <li className="dark-text">{this.props.title}</li>
-        <li><Link className="dark-text" to={'/' + this.props.link}>{this.props.title}</Link></li>
+        <li><Link className="dark-text waves-effect" to={'/' + this.props.link}>{this.props.title}</Link></li>
 
       );
     }

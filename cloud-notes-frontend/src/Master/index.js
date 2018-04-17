@@ -19,7 +19,6 @@ export default class MasterView extends Component {
       ds = <h2>Loading...</h2>;
     } else {
         ds = this.props.dataSource.map(obj => {
-            console.log(obj);
         if (obj.queryTitle == null) {
           obj.queryTitle = "";
         }
