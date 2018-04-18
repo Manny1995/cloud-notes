@@ -71,13 +71,15 @@ class App extends Component {
     console.log("Printing Classes");
     console.log(this.state.classes);
 
+
+    // For the redirect line, add the this.props.match.params.id as a prop
     return (
       <div className="App">
       
         <MasterView dataSource={this.state.classes} loading={false}/>
 
         <Switch>
-          <Route path={'/:id'} component={DetailView}/>
+          <Route path={'/:id'} component={DetailView}/> 
           <Redirect from='' to={'/' + begin}/> 
         </Switch>
         

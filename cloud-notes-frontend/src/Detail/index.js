@@ -33,7 +33,7 @@ export default class DetailView extends Component {
       this.sharedFetch(nextProps.match.params.id);
     }
 
-    componentWillMount() {
+    componentDidMount() {
       this.sharedFetch(this.props.match.params.id);
     }
     
@@ -66,8 +66,7 @@ export default class DetailView extends Component {
         });
 
         return <div className="row">
-          <div className="col s12 m3">
-          </div>
+          <div className="col s12 m3"></div>
           {innerArr}
         </div>
       });
@@ -77,9 +76,7 @@ export default class DetailView extends Component {
       });
   
       return  (<div>
-                <div className="row">
-                </div>
-                <br/>
+                <div className="row"></div><br/>
                 {detailGrid}
               </div>);
     }
