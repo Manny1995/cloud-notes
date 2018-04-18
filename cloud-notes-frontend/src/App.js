@@ -8,6 +8,16 @@ import MasterView from './Master';
 
 import { getClasses, getNotesForClass } from './api'
 
+
+class SplashScreen extends Component {
+
+  render() {
+    return (<div>
+        <h1>This is my Splash screen</h1>
+      </div>)
+  }
+}
+
 class App extends Component {
 
   constructor() {
@@ -22,7 +32,7 @@ class App extends Component {
   fetchClasses() {
     const outerState = this;
     getClasses((data) => {
-      this.setState({
+      outerState.setState({
         loading : false,
         classes : data,
       });
@@ -30,15 +40,15 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log("Component mounting")
     this.fetchClasses();
   }
+  
 
   render() {
     
-    console.log("Component Rendering");
-    console.log(this.state.classes)
-
+    if (this.state.loading) {
+      return <div>Loading...</div>;
+    }
 
     let begin = null;
     let dsRoutes = this.state.classes.map(obj => {
@@ -64,15 +74,13 @@ class App extends Component {
     return (
       <div className="App">
       
-        <MasterView dataSource = {this.state.classes} loading={false}/>
+        <MasterView dataSource={this.state.classes} loading={false}/>
 
         <Switch>
           <Route path={'/:id'} component={DetailView}/>
-          <Redirect to={'/' + begin}/>
-
+          <Redirect from='' to={'/' + begin}/> 
         </Switch>
-
-
+        
       </div>
     );
   }

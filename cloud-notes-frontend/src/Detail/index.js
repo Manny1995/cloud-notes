@@ -9,18 +9,14 @@ export default class DetailView extends Component {
       this.state = {
         loading : true,
         dataSource : [],
-        prevId : "",
       };
     }
-  
-    componentWillReceiveProps(nextProps) {
 
-      console.log("about to update detail view");
-      console.log("Detail view Mounting");
+    sharedFetch(id) {
 
       let outerState =  this;
 
-      getNotesForClass(nextProps.match.params.id, function(data) {
+      getNotesForClass(id, function(data) {
         console.log("Printing data");
         console.log(data);
 
@@ -31,8 +27,17 @@ export default class DetailView extends Component {
         });
       });   
     }
-
+    
   
+    componentWillReceiveProps(nextProps) {
+      this.sharedFetch(nextProps.match.params.id);
+    }
+
+    componentWillMount() {
+      this.sharedFetch(this.props.match.params.id);
+    }
+    
+
     render() {
 
       if (this.state.loading) {
@@ -73,21 +78,9 @@ export default class DetailView extends Component {
   
       return  (<div>
                 <div className="row">
-                  {/* <div className="col s12 m3">
-                  </div>
-                  <h3 className="page-title left-align">{this.props.match.params.id}</h3> */}
                 </div>
-
-          {/* <nav className="top-nav">
-            <div className="container">
-              <div className="nav-wrapper">
-                <h3 className="page-title">{this.props.match.params.id}</h3>
-              </div>
-            </div>
-          </nav> */}
-          <br/>
-        
-          {detailGrid}
-          </div>);
+                <br/>
+                {detailGrid}
+              </div>);
     }
   }
