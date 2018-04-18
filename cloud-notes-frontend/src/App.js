@@ -50,23 +50,10 @@ class App extends Component {
       return <div>Loading...</div>;
     }
 
-    let begin = null;
-    let dsRoutes = this.state.classes.map(obj => {
-        
-      if (obj.queryTitle == null) {
-        obj.queryTitle = "";
-      }
-
-      if (begin == null) {
-        begin = obj.queryTitle;
-      }
-  
-      return <Route key={obj._id} path={'/'+obj.queryTitle} component={DetailView}/>
-  
-    });
-
-
-
+    let begin = String();
+    if (this.state.classes.length > 0) {
+      begin = this.state.classes[0].queryTitle;
+    }
 
     console.log("Printing Classes");
     console.log(this.state.classes);
