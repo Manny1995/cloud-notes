@@ -36,6 +36,9 @@ const classRoute = require('./routes/classes');
 app.use('/api/notes', notesRoute);
 app.use('/api/classes', classRoute);
 
+app.use(express.static(path.join(__dirname, 'cloud-notes-frontend/build')));
+
+
 
 var mongooseadmin = require('mongooseadmin');
 app.use('/admin',mongooseadmin({
@@ -63,7 +66,8 @@ app.get('*', function(req, res) {
   // res.render('index');
   // res.sendFile(path.resolve(__dirname, '/cloud-notes-frontend/public/index.html'));
   // res.json('you did it');
-  res.sendFile(path.join(__dirname+'/cloud-notes-frontend/build/index.html'));
+  console.log(path.join(__dirname+'/cloud-notes-frontend/build/index.html'));
+  res.sendFile(__dirname+'/cloud-notes-frontend/build/index.html');
 
 
 });
