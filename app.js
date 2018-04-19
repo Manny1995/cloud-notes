@@ -13,9 +13,12 @@ const app = express();
 
 const cors = require('cors');
 app.use(cors());
+const constants = require('./config/constants');
 
-app.set('port', (process.env.PORT || 3001));
-const mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/CloudNotes';
+
+app.set('port', constants.PORT);
+
+const mongoURI = constants.MONGO_URI;
 
 
 //bodyParser has to be loaded before calling the routes
@@ -39,7 +42,7 @@ app.use('/admin',mongooseadmin({
   authentication : (username, password, callback) => {
     console.log(username)
     console.log(password)
-    callback(username == 'manny' && password == 'supersecret');
+    callback(username == constants.ADMIN_USERNAME && password == constants.ADMIN_PASSWORD);
   },
 }));
 

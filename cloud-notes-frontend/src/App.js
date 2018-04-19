@@ -54,11 +54,7 @@ class App extends Component {
     if (this.state.classes.length > 0) {
       begin = this.state.classes[0].queryTitle;
     }
-
-    console.log("Printing Classes");
-    console.log(this.state.classes);
-
-
+    
     // For the redirect line, add the this.props.match.params.id as a prop
     return (
       <div className="App">

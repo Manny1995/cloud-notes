@@ -12,6 +12,7 @@ const router = express.Router();
 
 const multer = require('multer');
 const fs = require('fs');
+const constants = require('../config/constants');
 
 
 function setQueryTitle(queryTitle) {
@@ -27,13 +28,12 @@ const storage = multer.diskStorage({
         console.log(req.body.category);
         const queryTitle = setQueryTitle(req.body.category);
 
-        if (!fs.existsSync('public/' + queryTitle)){
-            fs.mkdirSync('public/' + queryTitle);
+        if (!fs.existsSync(constants.BASE_FILE_DIR + queryTitle)){
+            fs.mkdirSync(constants.BASE_FILE_DIR + queryTitle);
         }
 
 
-
-        cb(null, 'public/' + queryTitle + '/');
+        cb(null, constants.BASE_FILE_DIR + queryTitle + '/');
     },
 
     filename : function(req, file, next) {

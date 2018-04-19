@@ -4,11 +4,13 @@
 const decrementCategory = require('./category-manager');
 const NoteModel = require('../models/Note');
 const CategoryManager = require('./category-manager');
+const constants = require('../config/constants')
 
 
+// For when you send it back to the client
 function formatNotes(notes) {
     const newNotes = notes.map((note) => {
-        note.filepath = 'http://localhost:3001/' + note.filepath;
+        note.filepath = constants.BASE_URL + note.filepath;
         return note;
     });
 

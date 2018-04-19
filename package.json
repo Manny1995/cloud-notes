@@ -4,6 +4,7 @@
   "description": "upload and backup your notes",
   "main": "app.js",
   "scripts": {
+    "start": "concurrently \"node app.js\" \"cd cloud-notes-frontend && yarn start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -22,6 +23,7 @@
     "cors": "^2.8.4",
     "create-react-app": "^1.5.2",
     "express": "^4.16.3",
+    "express-basic-auth": "^1.1.4",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.11",
     "mongoose": "^5.0.13",
