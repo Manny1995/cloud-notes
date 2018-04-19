@@ -58,15 +58,21 @@ mongoose.connect(mongoURI, function(error) {
 });
 
 
-app.get('/', function(req, res) {
+app.get('*', function(req, res) {
   console.log("Getting entries for default home");
-  res.render('index');
+  // res.render('index');
+  // res.sendFile(path.resolve(__dirname, '/cloud-notes-frontend/public/index.html'));
+  // res.json('you did it');
+  res.sendFile(path.join(__dirname+'/cloud-notes-frontend/build/index.html'));
+
+
 });
 
 module.exports = app;
 
 
-// Listen on port 3000
+// Listen on port 3001
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
+  
 });

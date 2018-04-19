@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Router} from 'react-router';
 import {Switch, Route, Link, Redirect} from 'react-router-dom';
-import './App.css';
+// import './App.css';
 
 import DetailView from './Detail';
 import MasterView from './Master';

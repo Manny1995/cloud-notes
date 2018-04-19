@@ -4,8 +4,9 @@
   "description": "upload and backup your notes",
   "main": "app.js",
   "scripts": {
-    "start": "concurrently \"node app.js\" \"cd cloud-notes-frontend && yarn start\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   },
   "keywords": [
     "notes",

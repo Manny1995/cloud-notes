@@ -1,8 +1,10 @@
+
 function getClasses(callback) {
   // var BASE_API = "https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
   // https://itunes.apple.com/search?term=NWA&entity=album
 
-  var REQUEST_URL = "http://localhost:3001/api/classes";
+  var BASE_URL = null || 'http://localhost:3001';
+  var REQUEST_URL = "/api/classes";
   fetch(REQUEST_URL)
     .then(function(response) {
       return response.json();
@@ -17,7 +19,8 @@ function getClasses(callback) {
 }
 
 function getNotesForClass(classId, callback) {
-  var REQUEST_URL = "http://localhost:3001/api/notes?category=" + classId;
+  var BASE_URL = null || 'http://localhost:3001';
+  var REQUEST_URL = "/api/notes?category=" + classId;
   console.log(classId);
   console.log(REQUEST_URL);
   fetch(REQUEST_URL)
