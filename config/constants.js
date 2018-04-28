@@ -6,8 +6,8 @@ const constants = {
     MONGO_URI : process.env.MONGOLAB_URI || 'mongodb://localhost/CloudNotes',
     ADMIN_USERNAME : process.env.ADMIN_USERNAME || 'manny',
     ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || 'supersecret',
-    BASE_FILE_DIR : '/public',
-    BASE_URL : os.hostname()+'/',
+    BASE_FILE_DIR : 'public/',
+    BASE_URL : '',
 };
 
 console.log(constants);
