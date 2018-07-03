@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F6127E220E9F07C003215BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6127E120E9F07C003215BF /* AppDelegate.m */; };
+		3F6127E820E9F07C003215BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6127E620E9F07C003215BF /* Main.storyboard */; };
+		3F6127EA20E9F07F003215BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6127E920E9F07F003215BF /* Assets.xcassets */; };
+		3F6127ED20E9F07F003215BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6127EB20E9F07F003215BF /* LaunchScreen.storyboard */; };
+		3F6127F020E9F07F003215BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6127EF20E9F07F003215BF /* main.m */; };
+		3F6127FA20E9F07F003215BF /* cloud_notes_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6127F920E9F07F003215BF /* cloud_notes_iosTests.m */; };
+		3F61280520E9F07F003215BF /* cloud_notes_iosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61280420E9F07F003215BF /* cloud_notes_iosUITests.m */; };
+		3F61281420EA00A8003215BF /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61281320EA00A8003215BF /* CategoryTableViewController.m */; };
+		3F61281920EA09DD003215BF /* NoteService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61281820EA09DD003215BF /* NoteService.m */; };
+		3F61281A20EA09DD003215BF /* NoteService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61281820EA09DD003215BF /* NoteService.m */; };
+		3F61281E20EA1B35003215BF /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61281D20EA1B35003215BF /* CategoryModel.m */; };
+		3F61281F20EA1B35003215BF /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F61281D20EA1B35003215BF /* CategoryModel.m */; };
+		3FB5C8F320EB0A49003B65DB /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C8F220EB0A49003B65DB /* CategoryTableViewCell.m */; };
+		3FB5C8F420EB0A49003B65DB /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C8F220EB0A49003B65DB /* CategoryTableViewCell.m */; };
+		3FB5C8F520EB0A49003B65DB /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C8F220EB0A49003B65DB /* CategoryTableViewCell.m */; };
+		3FB5C8F820EB3271003B65DB /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C8F720EB3271003B65DB /* NoteModel.m */; };
+		3FB5C8F920EB3271003B65DB /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C8F720EB3271003B65DB /* NoteModel.m */; };
+		3FB5C8FD20EB5997003B65DB /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C8FC20EB5996003B65DB /* NotesTableViewController.m */; };
+		3FB5C8FE20EB5997003B65DB /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C8FC20EB5996003B65DB /* NotesTableViewController.m */; };
+		3FB5C8FF20EB5997003B65DB /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C8FC20EB5996003B65DB /* NotesTableViewController.m */; };
+		3FB5C90220EB5F01003B65DB /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C90120EB5F01003B65DB /* NoteTableViewCell.m */; };
+		3FB5C90320EB5F01003B65DB /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C90120EB5F01003B65DB /* NoteTableViewCell.m */; };
+		3FB5C90420EB5F01003B65DB /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C90120EB5F01003B65DB /* NoteTableViewCell.m */; };
+		3FB5C90720EB6425003B65DB /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C90620EB6425003B65DB /* DocumentViewController.m */; };
+		3FB5C90820EB6425003B65DB /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C90620EB6425003B65DB /* DocumentViewController.m */; };
+		3FB5C90920EB6425003B65DB /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5C90620EB6425003B65DB /* DocumentViewController.m */; };
+		3FB5C90C20EB6748003B65DB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB5C90B20EB6748003B65DB /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F6127F620E9F07F003215BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6127D520E9F07C003215BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F6127DC20E9F07C003215BF;
+			remoteInfo = "cloud-notes-ios";
+		};
+		3F61280120E9F07F003215BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6127D520E9F07C003215BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F6127DC20E9F07C003215BF;
+			remoteInfo = "cloud-notes-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F6127DD20E9F07C003215BF /* cloud-notes-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cloud-notes-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6127E020E9F07C003215BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3F6127E120E9F07C003215BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3F6127E720E9F07C003215BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F6127E920E9F07F003215BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F6127EC20E9F07F003215BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F6127EE20E9F07F003215BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6127EF20E9F07F003215BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F6127F520E9F07F003215BF /* cloud-notes-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cloud-notes-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6127F920E9F07F003215BF /* cloud_notes_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cloud_notes_iosTests.m; sourceTree = "<group>"; };
+		3F6127FB20E9F07F003215BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F61280020E9F07F003215BF /* cloud-notes-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cloud-notes-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F61280420E9F07F003215BF /* cloud_notes_iosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cloud_notes_iosUITests.m; sourceTree = "<group>"; };
+		3F61280620E9F07F003215BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F61281220EA00A8003215BF /* CategoryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
+		3F61281320EA00A8003215BF /* CategoryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
+		3F61281720EA09DD003215BF /* NoteService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteService.h; sourceTree = "<group>"; };
+		3F61281820EA09DD003215BF /* NoteService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteService.m; sourceTree = "<group>"; };
+		3F61281C20EA1B35003215BF /* CategoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		3F61281D20EA1B35003215BF /* CategoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		3FB5C8F120EB0A49003B65DB /* CategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
+		3FB5C8F220EB0A49003B65DB /* CategoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
+		3FB5C8F620EB3271003B65DB /* NoteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteModel.h; sourceTree = "<group>"; };
+		3FB5C8F720EB3271003B65DB /* NoteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteModel.m; sourceTree = "<group>"; };
+		3FB5C8FB20EB5996003B65DB /* NotesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
+		3FB5C8FC20EB5996003B65DB /* NotesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
+		3FB5C90020EB5F01003B65DB /* NoteTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteTableViewCell.h; sourceTree = "<group>"; };
+		3FB5C90120EB5F01003B65DB /* NoteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteTableViewCell.m; sourceTree = "<group>"; };
+		3FB5C90520EB6425003B65DB /* DocumentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentViewController.h; sourceTree = "<group>"; };
+		3FB5C90620EB6425003B65DB /* DocumentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
+		3FB5C90B20EB6748003B65DB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F6127DA20E9F07C003215BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FB5C90C20EB6748003B65DB /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6127F220E9F07F003215BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6127FD20E9F07F003215BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F6127D420E9F07C003215BF = {
+			isa = PBXGroup;
+			children = (
+				3F6127DF20E9F07C003215BF /* cloud-notes-ios */,
+				3F6127F820E9F07F003215BF /* cloud-notes-iosTests */,
+				3F61280320E9F07F003215BF /* cloud-notes-iosUITests */,
+				3F6127DE20E9F07C003215BF /* Products */,
+				3FB5C90A20EB6747003B65DB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F6127DE20E9F07C003215BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F6127DD20E9F07C003215BF /* cloud-notes-ios.app */,
+				3F6127F520E9F07F003215BF /* cloud-notes-iosTests.xctest */,
+				3F61280020E9F07F003215BF /* cloud-notes-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F6127DF20E9F07C003215BF /* cloud-notes-ios */ = {
+			isa = PBXGroup;
+			children = (
+				3FB5C8F020EB0A1F003B65DB /* Table View Cells */,
+				3F61281B20EA1B16003215BF /* Models */,
+				3F61281620EA0996003215BF /* Services */,
+				3F61281520EA0985003215BF /* Controllers */,
+				3F6127E020E9F07C003215BF /* AppDelegate.h */,
+				3F6127E120E9F07C003215BF /* AppDelegate.m */,
+				3F6127E620E9F07C003215BF /* Main.storyboard */,
+				3F6127E920E9F07F003215BF /* Assets.xcassets */,
+				3F6127EB20E9F07F003215BF /* LaunchScreen.storyboard */,
+				3F6127EE20E9F07F003215BF /* Info.plist */,
+				3F6127EF20E9F07F003215BF /* main.m */,
+			);
+			path = "cloud-notes-ios";
+			sourceTree = "<group>";
+		};
+		3F6127F820E9F07F003215BF /* cloud-notes-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F6127F920E9F07F003215BF /* cloud_notes_iosTests.m */,
+				3F6127FB20E9F07F003215BF /* Info.plist */,
+			);
+			path = "cloud-notes-iosTests";
+			sourceTree = "<group>";
+		};
+		3F61280320E9F07F003215BF /* cloud-notes-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3F61280420E9F07F003215BF /* cloud_notes_iosUITests.m */,
+				3F61280620E9F07F003215BF /* Info.plist */,
+			);
+			path = "cloud-notes-iosUITests";
+			sourceTree = "<group>";
+		};
+		3F61281520EA0985003215BF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FB5C90520EB6425003B65DB /* DocumentViewController.h */,
+				3FB5C90620EB6425003B65DB /* DocumentViewController.m */,
+				3F61281220EA00A8003215BF /* CategoryTableViewController.h */,
+				3F61281320EA00A8003215BF /* CategoryTableViewController.m */,
+				3FB5C8FB20EB5996003B65DB /* NotesTableViewController.h */,
+				3FB5C8FC20EB5996003B65DB /* NotesTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3F61281620EA0996003215BF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3F61281720EA09DD003215BF /* NoteService.h */,
+				3F61281820EA09DD003215BF /* NoteService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3F61281B20EA1B16003215BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FB5C8F620EB3271003B65DB /* NoteModel.h */,
+				3FB5C8F720EB3271003B65DB /* NoteModel.m */,
+				3F61281C20EA1B35003215BF /* CategoryModel.h */,
+				3F61281D20EA1B35003215BF /* CategoryModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3FB5C8F020EB0A1F003B65DB /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3FB5C8F120EB0A49003B65DB /* CategoryTableViewCell.h */,
+				3FB5C8F220EB0A49003B65DB /* CategoryTableViewCell.m */,
+				3FB5C90020EB5F01003B65DB /* NoteTableViewCell.h */,
+				3FB5C90120EB5F01003B65DB /* NoteTableViewCell.m */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		3FB5C90A20EB6747003B65DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FB5C90B20EB6748003B65DB /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F6127DC20E9F07C003215BF /* cloud-notes-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F61280920E9F07F003215BF /* Build configuration list for PBXNativeTarget "cloud-notes-ios" */;
+			buildPhases = (
+				3F6127D920E9F07C003215BF /* Sources */,
+				3F6127DA20E9F07C003215BF /* Frameworks */,
+				3F6127DB20E9F07C003215BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cloud-notes-ios";
+			productName = "cloud-notes-ios";
+			productReference = 3F6127DD20E9F07C003215BF /* cloud-notes-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F6127F420E9F07F003215BF /* cloud-notes-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F61280C20E9F07F003215BF /* Build configuration list for PBXNativeTarget "cloud-notes-iosTests" */;
+			buildPhases = (
+				3F6127F120E9F07F003215BF /* Sources */,
+				3F6127F220E9F07F003215BF /* Frameworks */,
+				3F6127F320E9F07F003215BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F6127F720E9F07F003215BF /* PBXTargetDependency */,
+			);
+			name = "cloud-notes-iosTests";
+			productName = "cloud-notes-iosTests";
+			productReference = 3F6127F520E9F07F003215BF /* cloud-notes-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F6127FF20E9F07F003215BF /* cloud-notes-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F61280F20E9F07F003215BF /* Build configuration list for PBXNativeTarget "cloud-notes-iosUITests" */;
+			buildPhases = (
+				3F6127FC20E9F07F003215BF /* Sources */,
+				3F6127FD20E9F07F003215BF /* Frameworks */,
+				3F6127FE20E9F07F003215BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F61280220E9F07F003215BF /* PBXTargetDependency */,
+			);
+			name = "cloud-notes-iosUITests";
+			productName = "cloud-notes-iosUITests";
+			productReference = 3F61280020E9F07F003215BF /* cloud-notes-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F6127D520E9F07C003215BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Immanuel Amirtharaj";
+				TargetAttributes = {
+					3F6127DC20E9F07C003215BF = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					3F6127F420E9F07F003215BF = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 3F6127DC20E9F07C003215BF;
+					};
+					3F6127FF20E9F07F003215BF = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 3F6127DC20E9F07C003215BF;
+					};
+				};
+			};
+			buildConfigurationList = 3F6127D820E9F07C003215BF /* Build configuration list for PBXProject "cloud-notes-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F6127D420E9F07C003215BF;
+			productRefGroup = 3F6127DE20E9F07C003215BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F6127DC20E9F07C003215BF /* cloud-notes-ios */,
+				3F6127F420E9F07F003215BF /* cloud-notes-iosTests */,
+				3F6127FF20E9F07F003215BF /* cloud-notes-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F6127DB20E9F07C003215BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6127ED20E9F07F003215BF /* LaunchScreen.storyboard in Resources */,
+				3F6127EA20E9F07F003215BF /* Assets.xcassets in Resources */,
+				3F6127E820E9F07C003215BF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6127F320E9F07F003215BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6127FE20E9F07F003215BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F6127D920E9F07C003215BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6127F020E9F07F003215BF /* main.m in Sources */,
+				3FB5C8F320EB0A49003B65DB /* CategoryTableViewCell.m in Sources */,
+				3F61281420EA00A8003215BF /* CategoryTableViewController.m in Sources */,
+				3FB5C90720EB6425003B65DB /* DocumentViewController.m in Sources */,
+				3F6127E220E9F07C003215BF /* AppDelegate.m in Sources */,
+				3F61281E20EA1B35003215BF /* CategoryModel.m in Sources */,
+				3FB5C8FD20EB5997003B65DB /* NotesTableViewController.m in Sources */,
+				3FB5C90220EB5F01003B65DB /* NoteTableViewCell.m in Sources */,
+				3F61281920EA09DD003215BF /* NoteService.m in Sources */,
+				3FB5C8F820EB3271003B65DB /* NoteModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6127F120E9F07F003215BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6127FA20E9F07F003215BF /* cloud_notes_iosTests.m in Sources */,
+				3FB5C90820EB6425003B65DB /* DocumentViewController.m in Sources */,
+				3FB5C8F920EB3271003B65DB /* NoteModel.m in Sources */,
+				3FB5C90320EB5F01003B65DB /* NoteTableViewCell.m in Sources */,
+				3F61281F20EA1B35003215BF /* CategoryModel.m in Sources */,
+				3F61281A20EA09DD003215BF /* NoteService.m in Sources */,
+				3FB5C8F420EB0A49003B65DB /* CategoryTableViewCell.m in Sources */,
+				3FB5C8FE20EB5997003B65DB /* NotesTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6127FC20E9F07F003215BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F61280520E9F07F003215BF /* cloud_notes_iosUITests.m in Sources */,
+				3FB5C8F520EB0A49003B65DB /* CategoryTableViewCell.m in Sources */,
+				3FB5C8FF20EB5997003B65DB /* NotesTableViewController.m in Sources */,
+				3FB5C90920EB6425003B65DB /* DocumentViewController.m in Sources */,
+				3FB5C90420EB5F01003B65DB /* NoteTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F6127F720E9F07F003215BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F6127DC20E9F07C003215BF /* cloud-notes-ios */;
+			targetProxy = 3F6127F620E9F07F003215BF /* PBXContainerItemProxy */;
+		};
+		3F61280220E9F07F003215BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F6127DC20E9F07C003215BF /* cloud-notes-ios */;
+			targetProxy = 3F61280120E9F07F003215BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F6127E620E9F07C003215BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F6127E720E9F07C003215BF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F6127EB20E9F07F003215BF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F6127EC20E9F07F003215BF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F61280720E9F07F003215BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3F61280820E9F07F003215BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F61280A20E9F07F003215BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LFZPSZ9QV;
+				INFOPLIST_FILE = "cloud-notes-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "IA.cloud-notes-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F61280B20E9F07F003215BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LFZPSZ9QV;
+				INFOPLIST_FILE = "cloud-notes-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "IA.cloud-notes-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3F61280D20E9F07F003215BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LFZPSZ9QV;
+				INFOPLIST_FILE = "cloud-notes-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "IA.cloud-notes-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cloud-notes-ios.app/cloud-notes-ios";
+			};
+			name = Debug;
+		};
+		3F61280E20E9F07F003215BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LFZPSZ9QV;
+				INFOPLIST_FILE = "cloud-notes-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "IA.cloud-notes-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cloud-notes-ios.app/cloud-notes-ios";
+			};
+			name = Release;
+		};
+		3F61281020E9F07F003215BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LFZPSZ9QV;
+				INFOPLIST_FILE = "cloud-notes-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "IA.cloud-notes-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "cloud-notes-ios";
+			};
+			name = Debug;
+		};
+		3F61281120E9F07F003215BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LFZPSZ9QV;
+				INFOPLIST_FILE = "cloud-notes-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "IA.cloud-notes-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "cloud-notes-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F6127D820E9F07C003215BF /* Build configuration list for PBXProject "cloud-notes-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F61280720E9F07F003215BF /* Debug */,
+				3F61280820E9F07F003215BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F61280920E9F07F003215BF /* Build configuration list for PBXNativeTarget "cloud-notes-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F61280A20E9F07F003215BF /* Debug */,
+				3F61280B20E9F07F003215BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F61280C20E9F07F003215BF /* Build configuration list for PBXNativeTarget "cloud-notes-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F61280D20E9F07F003215BF /* Debug */,
+				3F61280E20E9F07F003215BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F61280F20E9F07F003215BF /* Build configuration list for PBXNativeTarget "cloud-notes-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F61281020E9F07F003215BF /* Debug */,
+				3F61281120E9F07F003215BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F6127D520E9F07C003215BF /* Project object */;
+}

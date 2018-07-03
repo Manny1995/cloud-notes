@@ -8,6 +8,8 @@ const constants = {
     ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || 'supersecret',
     BASE_FILE_DIR : '/public',
     BASE_URL : os.hostname()+'/',
+    AWS_KEY : process.env.AWS_KEY|| 'invalid username',
+    AWS_SECRET : process.env.AWS_SECRET || 'invalid key',
 };
 
 console.log(constants);
