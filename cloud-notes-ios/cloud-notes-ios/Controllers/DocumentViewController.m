@@ -10,6 +10,8 @@
 
 @interface DocumentViewController ()
 
+@property(strong, nonatomic) UIActivityIndicatorView *loadingView;
+
 @end
 
 @implementation DocumentViewController
@@ -19,15 +21,38 @@
     // Do any additional setup after loading the view.
     
     self.webView.UIDelegate = self;
+    self.webView.navigationDelegate = self;
+    
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBar.prefersLargeTitles = NO;
+    
+    self.loadingView = [UIActivityIndicatorView new];
+    [self.loadingView setHidesWhenStopped:YES];
+    [self.loadingView setTintColor:[UIColor blackColor]];
+    [self.loadingView setBounds:self.view.bounds];
+    [self.view addSubview:self.loadingView];
+    [self.loadingView startAnimating];
     
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.fileUrl]]];
-    
+
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    NSLog(@"Did Finish Navigation");
+    [self.loadingView stopAnimating];
+}
+
+
 
 /*
 #pragma mark - Navigation

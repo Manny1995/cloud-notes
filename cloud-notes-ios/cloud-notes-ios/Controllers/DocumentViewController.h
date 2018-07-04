@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 
-@interface DocumentViewController : UIViewController <WKUIDelegate>
+@interface DocumentViewController : UIViewController <WKUIDelegate, WKNavigationDelegate>
 
 @property (strong, nonatomic) IBOutlet WKWebView *webView;
 @property(copy, nonatomic) NSString *documentTitle;

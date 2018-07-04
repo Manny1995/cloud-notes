@@ -11,6 +11,6 @@
 #import "CategoryTableViewCell.h"
 #import "NotesTableViewController.h"
 
-@interface CategoryTableViewController : UITableViewController
+@interface CategoryTableViewController : UITableViewController <UISearchBarDelegate, UISearchResultsUpdating>
 
 @end

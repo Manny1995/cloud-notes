@@ -10,7 +10,8 @@
 
 @interface CategoryTableViewController ()
 
-@property(copy, nonatomic) NSMutableArray *dataSource;
+@property(copy, nonatomic) NSMutableArray<CategoryModel *> *dataSource;
+@property(copy, nonatomic) NSArray<CategoryModel *> *filteredDataSource;
 
 @property(copy, nonatomic) NSString *selectedCategoryId;
 
@@ -18,6 +19,15 @@
 
 @implementation CategoryTableViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:YES];
+    [self.navigationItem.searchController dismissViewControllerAnimated:NO completion:nil];
+}
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -31,10 +41,14 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     self.dataSource = [NSMutableArray new];
+    self.filteredDataSource = [NSArray new];
+    
+    [self setupSearchAndNavbar];
     
     __weak CategoryTableViewController *weakSelf = self;
     [NoteService getCategories:^(NSMutableArray * data) {
         weakSelf.dataSource = data;
+        weakSelf.filteredDataSource = data;
         [self.tableView reloadData];
     }];
 }
@@ -44,6 +58,36 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) setupSearchAndNavbar {
+    self.navigationItem.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.navigationItem.searchController.searchBar.delegate = self;
+    self.navigationItem.hidesBackButton = NO;
+    [self.navigationItem.searchController setActive:YES];
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    self.navigationItem.searchController.searchResultsUpdater = self;
+    self.navigationItem.searchController.dimsBackgroundDuringPresentation = NO;
+}
+
+
+#pragma mark - Search Delegate
+
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSString *searchText = searchController.searchBar.text;
+    
+    if (![searchText isEqualToString:@""]) {
+        self.filteredDataSource = [self.dataSource filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+            CategoryModel *model = evaluatedObject;
+            return [model.title containsString:searchText];
+        }]];
+    }
+    else {
+        self.filteredDataSource = self.dataSource;
+    }
+    [self.tableView reloadData];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -51,23 +95,23 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.dataSource count];
+    return [self.filteredDataSource count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
     CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryTableViewCell" forIndexPath:indexPath];
-    [cell setModel:[self.dataSource objectAtIndex:indexPath.row]];
+    [cell setModel:[self.filteredDataSource objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CategoryModel *selected = [self.dataSource objectAtIndex:indexPath.row];
-    self.selectedCategoryId = selected.queryTitle;
-    [self performSegueWithIdentifier:@"onNotes" sender:self];
+        CategoryModel *selected = [self.filteredDataSource objectAtIndex:indexPath.row];
+        self.selectedCategoryId = selected.queryTitle;
+        [self performSegueWithIdentifier:@"onNotes" sender:self];
 }
 
 /*
